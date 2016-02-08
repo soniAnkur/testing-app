@@ -1,10 +1,10 @@
 (function(){
 
   angular
-       .module('users')
-       .controller('UserController', [
-          'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
-          UserController
+       .module('application')
+       .controller('ApplicationController', [
+          'applicationService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
+          ApplicationController
        ]);
 
   /**
@@ -14,7 +14,7 @@
    * @param avatarsService
    * @constructor
    */
-  function UserController( userService, $mdSidenav, $mdBottomSheet, $log) {
+  function ApplicationController( applicationService, $mdSidenav, $mdBottomSheet, $log) {
     var self = this;
 
     self.selected     = null;
@@ -25,7 +25,7 @@
 
     // Load all registered users
 
-    userService
+      applicationService
           .loadAllUsers()
           .then( function( users ) {
             self.users    = [].concat(users);
@@ -58,7 +58,7 @@
 
         $mdBottomSheet.show({
           controllerAs  : "cp",
-          templateUrl   : './src/users/view/contactSheet.html',
+          templateUrl   : './src/application/view/contactSheet.html',
           controller    : [ '$mdBottomSheet', ContactSheetController],
           parent        : angular.element(document.getElementById('content'))
         }).then(function(clickedItem) {

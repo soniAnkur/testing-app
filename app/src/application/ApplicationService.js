@@ -1,8 +1,8 @@
 (function(){
   'use strict';
 
-  angular.module('users')
-         .service('userService', ['$q', UserService]);
+  angular.module('application')
+         .service('applicationService', ['$q', ApplicationService]);
 
   /**
    * Users DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function UserService($q){
+  function ApplicationService($q){
     var users = [
       {
         name: 'Lia Lugo',

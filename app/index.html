@@ -23,7 +23,7 @@
 
   </head>
 
-  <body ng-app="starterApp" layout="row" ng-controller="UserController as ul" ng-cloak >
+  <body ng-app="testing-app" layout="row" ng-controller="ApplicationController as ul" ng-cloak >
 
 
   <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
@@ -74,14 +74,14 @@
     <script type="text/javascript" src="../node_modules/angular-aria/angular-aria.js"></script>
     <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
 
-    <script src="./src/users/Users.js"></script>
-    <script src="./src/users/UserController.js"></script>
-    <script src="./src/users/UserService.js"></script>
+    <script src="./src/application/Application.js"></script>
+    <script src="./src/application/ApplicationController.js"></script>
+    <script src="./src/application/ApplicationService.js"></script>
 
     <script type="text/javascript">
 
           angular
-              .module('starterApp', ['ngMaterial', 'users'])
+              .module('testing-app', ['ngMaterial', 'application'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider
